@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablero Kanban - Drag & Drop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-4">
+    <div class="max-w-6xl mx-auto">
+        <!-- ESTE BTN ES PARA VOLVER AL INICIO -->
+        <a href="../index.html" class="inline-block mb-6 bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600">
+            ← Volver al inicio
+        </a>
+        
+        <h1 class="text-3xl font-bold text-center mb-8">📋 Tablero Kanban</h1>
+        
+        <div class="grid grid-cols-3 gap-6">
+            <div class="bg-red-100 rounded-lg p-4">
+                <h2 class="text-lg font-bold mb-4 text-red-800">📝 Por Hacer</h2>
+                <div id="por-hacer" class="min-h-96 space-y-2" 
+                     ondrop="soltar(event)" ondragover="permitirSoltar(event)">
+                    <div class="tarjeta bg-white p-3 rounded shadow cursor-move" draggable="true" 
+                         ondragstart="arrastrar(event)">
+                        Estudiar JavaScript
+                    </div>
+                    <div class="tarjeta bg-white p-3 rounded shadow cursor-move" draggable="true" 
+                         ondragstart="arrastrar(event)">
+                        Hacer ejercicios
+                    </div>
+                    <div class="tarjeta bg-white p-3 rounded shadow cursor-move" draggable="true" 
+                         ondragstart="arrastrar(event)">
+                        Revisar código
+                    </div>
+                </div>
+                <button onclick="agregarTarea('por-hacer')" 
+                        class="w-full mt-4 bg-red-500 text-white py-2 rounded hover:bg-red-600">
+                    + Agregar
+                </button>
+            </div>
+
+    
+            <div class="bg-yellow-100 rounded-lg p-4">
+                <h2 class="text-lg font-bold mb-4 text-yellow-800">⏳ En Proceso</h2>
+                <div id="en-proceso" class="min-h-96 space-y-2" 
+                     ondrop="soltar(event)" ondragover="permitirSoltar(event)">
+                    <div class="tarjeta bg-white p-3 rounded shadow cursor-move" draggable="true" 
+                         ondragstart="arrastrar(event)">
+                        Practicar regex
+                    </div>
+                </div>
+                <button onclick="agregarTarea('en-proceso')" 
+                        class="w-full mt-4 bg-yellow-500 text-white py-2 rounded hover:bg-yellow-600">
+                    + Agregar
+                </button>
+            </div>
+
+           
+            <div class="bg-green-100 rounded-lg p-4">
+                <h2 class="text-lg font-bold mb-4 text-green-800">✅ Terminado</h2>
+                <div id="terminado" class="min-h-96 space-y-2" 
+                     ondrop="soltar(event)" ondragover="permitirSoltar(event)">
+                    <div class="tarjeta bg-white p-3 rounded shadow cursor-move" draggable="true" 
+                         ondragstart="arrastrar(event)">
+                        Crear proyecto
+                    </div>
+                </div>
+                <button onclick="agregarTarea('terminado')" 
+                        class="w-full mt-4 bg-green-500 text-white py-2 rounded hover:bg-green-600">
+                    + Agregar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="kanban.js"></script>
+</body>
+</html>

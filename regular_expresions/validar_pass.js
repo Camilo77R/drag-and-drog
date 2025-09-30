@@ -11,7 +11,4 @@ function validarPassword(password) {
     return patron.test(password);
 }
 
-// Probar
-console.log("abc123 →", validarPassword("abc123"));   // true
-console.log("abcdef →", validarPassword("abcdef"));   // false
-console.log("123456 →", validarPassword("123456"));   // false
+

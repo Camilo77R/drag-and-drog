@@ -9,6 +9,3 @@ function validarTelefono(telefono) {
     return patron.test(telefono);
 }
 
-console.log("3001234567 →", validarTelefono("3001234567")); // true
-console.log("2001234567 →", validarTelefono("2001234567")); // false
-console.log("300123456 →", validarTelefono("300123456"));   // false

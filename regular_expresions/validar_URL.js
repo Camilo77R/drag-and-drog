@@ -13,7 +13,4 @@ function validarURL(url) {
     return patron.test(url);
 }
 
-// Probar
-console.log("https://google.com →", validarURL("https://google.com"));     // true
-console.log("google.com →", validarURL("google.com"));                     // false
-console.log("http://sitio.co →", validarURL("http://sitio.co"));           // true
+
